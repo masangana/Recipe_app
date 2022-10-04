@@ -9,7 +9,8 @@ class FoodsController < ApplicationController
     if @food.save
       redirect_to foods_path
     else
-      render :new
+      p @food.errors.full_messages
+      render :new, status: :unprocessable_entity
     end
   end
 
