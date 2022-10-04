@@ -50,8 +50,20 @@ User.all.each  do |user|
         end
 end
 
+# Create recipe_foods
+p "Creating recipe_foods..."
+
+120.times do
+    RecipeFood.create(
+        quantity: Faker::Food.measurement,
+        recipe_id: Recipe.ids.sample,
+        food_id: Food.ids.sample
+    )
+end
+
 p "Database seeded!"
 
 p "Successfully created #{User.count} users"
 p "Successfully created #{Recipe.count} recipes"
 p "Successfully created #{Food.count} foods"
+p "Successfully created #{RecipeFood.count} recipe_foods"

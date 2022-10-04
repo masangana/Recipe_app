@@ -18,13 +18,13 @@ class RecipesController < ApplicationController
   def index
     @recipes = Recipe.includes([:user, :recipe_foods]).where(user_id: current_user.id).order('created_at DESC')
     @recipes.each do |recipe|
-      recipe.recipe_foods.all.includes([:food]).sort_by! { |recipe_food| recipe_food.food.name }
+      recipe.recipe_foods.all.includes([:food]).sort_by { |recipe_food| recipe_food.food.name }
     end
   end
 
   def show
     @recipe = Recipe.includes([:user]).find(params[:id])
-    @recipe_foods = @recipe.recipe_foods.all.includes([:food]).sort_by! { |recipe_food| recipe_food.food.name }
+    @recipe_foods = @recipe.recipe_foods.all.includes([:food]).sort_by { |recipe_food| recipe_food.food.name }
   end
 
   def destroy
@@ -34,9 +34,9 @@ class RecipesController < ApplicationController
   end
 
   def public
-    @recipes = Recipe.includes([:user, :recipe_foods]).where(public: true).order('created_at DESC')
-    @recipes.each do |recipe|
-      recipe.recipe_foods.all.includes([:food]).sort_by! { |recipe_food| recipe_food.food.name }
+    @public_recipes = Recipe.includes([:user, :recipe_foods]).where(public: true).order('created_at DESC')
+    @public_recipes.each do |recipe|
+      recipe.recipe_foods.all.includes([:food]).sort_by { |recipe_food| recipe_food.food.name }
     end
   end
 
