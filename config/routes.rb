@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :recipes do
       #resources :recipe_foods
     end
+    # Define routes for foods
     resources :foods, only: [:index, :new, :create, :destroy]
   end
 
@@ -17,5 +18,4 @@ Rails.application.routes.draw do
   root "recipes#public"
   # root "articles#index"
 
-  # Define routes for foods
 end
