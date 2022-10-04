@@ -18,4 +18,8 @@ class FoodsController < ApplicationController
   end
 
   def destroy; end
+
+  def food_params
+    params.require(:food).permit(:name, :measurement_unit, :price, :quantity)
+  end
 end
