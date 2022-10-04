@@ -19,3 +19,28 @@
         <span class="badge text-bg-secondary p-2 px-4">Private</span>
     <% end %>
 </div>
+
+<div>
+    <%= link_to "Generate Shopping List", class: "btn btn-primary" %>
+</div>
+
+<div>
+    <%= link_to "Add Ingredient", new_user_recipe_recipe_food_path(@recipe.user, @recipe.id), class: "btn btn-" %>
+</div>
+
+<div>
+    <% if @recipe.recipe_foods.any? %>
+        <h3>Ingredients</h3>
+        <ul>
+            <% @recipe.recipe_foods.each do |recipe_food| %>
+                <li>
+                    <%= recipe_food.food.name %> - <%= recipe_food.quantity %> - <%= recipe_food.food.price %>
+                    <% if can? :manage, @recipe %>
+                        <%= link_to "Edit", class: "btn btn-primary" %>
+                        <%= button_to "Delete", user_recipe_recipe_food_path(@recipe.user, @recipe.id, recipe_food.id), method: :delete, class: "btn btn-danger" %>
+                    <% end %>
+                </li>
+            <% end %>
+        </ul>
+    <% end %>
+</div>
