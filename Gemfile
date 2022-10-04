@@ -62,6 +62,12 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+
+  #bullet gem
+  gem "bullet"
+
+  # use faker gem for seeding data
+  gem "faker"
 end
 
 group :test do

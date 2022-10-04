@@ -1,0 +1,13 @@
+<h1>Private Recipe Details</h1>
+<div>
+    <%= link_to recipe.name, user_recipe_path(id: recipe.id, user_id: recipe.user.id) %>
+    <h3>By <%= recipe.user.name%> </h3>
+    <h4><%= recipe.description%> </h4>
+    <div>
+        <% if recipe.public %>
+            <span class="badge text-bg-warning p-2 px-4">Public</span>
+        <% else %>
+            <span class="badge text-bg-secondary p-2 px-4">Private</span>
+        <% end %>
+    </div>
+</div>
