@@ -8,11 +8,14 @@ Rails.application.routes.draw do
   # Define routes for recipes
   resources :users do
     resources :recipes do
-      #ressources :recipe_foods
+      #resources :recipe_foods
     end
   end
 
   # Defines the root path route ("/")
   root "recipes#public"
   # root "articles#index"
+
+  # Define routes for foods
+  resources :foods, only: [:index, :new, :create, :destroy]
 end

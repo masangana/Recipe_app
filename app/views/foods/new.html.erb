@@ -1,2 +1,14 @@
-<h1>Foods#new</h1>
-<p>Find me in app/views/foods/new.html.erb</p>
+<div class='new_container'>
+    <h1 class= 'new_title'>Add Food</h1>
+    <%= form_with model: @food, url: foods_path do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      <%= f.label :measurement_unit %>
+      <%= f.text_field :measurement_unit %>
+      <%= f.label :price %>
+      <%= f.number_field :price %>
+      <%= f.label :quantity %>
+      <%= f.number_field :quantity %>
+      <%= f.submit "Add Food" %>
+    <% end %>
+</div>
