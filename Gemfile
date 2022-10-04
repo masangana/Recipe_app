@@ -65,6 +65,9 @@ group :development do
 
   #bullet gem
   gem "bullet"
+
+  # use faker gem for seeding data
+  gem "faker"
 end
 
 group :test do
