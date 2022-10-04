@@ -15,7 +15,10 @@ p "Creating users..."
 
 6.times do
     User.create(
-        name: Faker::Name.name
+        name: Faker::Name.name,
+        email: Faker::Internet.email,
+        password: "123456",
+        password_confirmation: "123456",
     )
     end
 
