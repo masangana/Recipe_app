@@ -2,12 +2,12 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Define recipes default route
-  get "recipes/index" to "recipes#public"
+  get "recipes/index", to: "recipes#public"
 
   # Define routes for recipes
-  ressources :users do
-    ressources :recipes do
-      ressources :recipe_foods
+  resources :users do
+    resources :recipes do
+      #ressources :recipe_foods
     end
   end
 
