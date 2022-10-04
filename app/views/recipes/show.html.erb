@@ -36,7 +36,7 @@
                 <li>
                     <%= recipe_food.food.name %> - <%= recipe_food.quantity %> - <%= recipe_food.food.price %>
                     <% if can? :manage, @recipe %>
-                        <%= link_to "Edit", class: "btn btn-primary" %>
+                        <%= link_to "Edit", edit_user_recipe_recipe_food_path(@recipe.user, @recipe.id, recipe_food.id), class: "btn btn-primary" %>
                         <%= button_to "Delete", user_recipe_recipe_food_path(@recipe.user, @recipe.id, recipe_food.id), method: :delete, class: "btn btn-danger" %>
                     <% end %>
                 </li>
