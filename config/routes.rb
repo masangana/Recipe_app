@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   # Define routes for recipes
   resources :users do
     resources :recipes do
-      #resources :recipe_foods
+      resources :recipe_foods, only: [:new, :create, :destroy, :update, :edit]
     end
   end
 
