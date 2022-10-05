@@ -1,20 +1,23 @@
-<div class='new_container'>
-    <h1 class= 'new_title'>Add Food</h1>
-    <% if @food.errors.any? %>
-        <h2>The following errors prevented the article from saving:</h2>
-        <% @food.errors.full_messages.each do |msg| %>
-            <%= msg %>
+<div class="page-wrapper">
+    <div class='form-wrapper'>
+        <h1 class= 'new_title'>Add Food</h1>
+        <div class="divider"></div>
+        <% if @food.errors.any? %>
+            <h2>The following errors prevented the article from saving:</h2>
+            <% @food.errors.full_messages.each do |msg| %>
+                <%= msg %>
+            <% end %>
         <% end %>
-    <% end %>
-    <%= form_with model: @food, url: foods_path do |f| %>
-      <%= f.label :name %>
-      <%= f.text_field :name %>
-      <%= f.label :measurement_unit %>
-      <%= f.text_field :measurement_unit %>
-      <%= f.label :price %>
-      <%= f.number_field :price %>
-      <%= f.label :quantity %>
-      <%= f.number_field :quantity %>
-      <%= f.submit "Add Food" %>
-    <% end %>
+        <%= form_with model: @food, url: new_user_food_path do |f| %>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+        <%= f.label :measurement_unit %>
+        <%= f.text_field :measurement_unit %>
+        <%= f.label :price %>
+        <%= f.number_field :price %>
+        <%= f.label :quantity %>
+        <%= f.number_field :quantity %>
+        <%= f.submit "Add Food" %>
+        <% end %>
+    </div>
 </div>
