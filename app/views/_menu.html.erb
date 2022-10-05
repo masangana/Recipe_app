@@ -17,7 +17,7 @@
           </nav>
         </div>
         <div class="site-header__end">
-          <%= link_to "Sign out", destroy_user_session_path, {:class => "button-si"} %>
+          <%= button_to "Logout", destroy_user_session_path, { method: :delete, data: { turbo:false }}%>
         </div>
       </div>
     </header>
