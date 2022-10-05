@@ -47,5 +47,9 @@ class RecipesController < ApplicationController
   def recipe_params
     params.require(:recipe).permit(:name, :description, :public, :preparation_time, :cooking_time)
   end
-
+  
+  def add_food_view
+    @receipt = Receipt.find(params[:receipt_id])
+    render 'add_food'
+  end
 end
