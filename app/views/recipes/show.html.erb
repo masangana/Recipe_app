@@ -28,20 +28,35 @@
         <%= link_to "Add Ingredient", class: "btn btn-" %>
     </div>
     <hr/>
-<div>
-    <% if @recipe.recipe_foods.any? %>
-        <h3>Ingredients</h3>
-        <ul>
-            <% @recipe.recipe_foods.each do |recipe_food| %>
-                <li>
-                    <%= recipe_food.food.name %> - <%= recipe_food.quantity %> - <%= recipe_food.food.price %>
-                    <% if can? :manage, @recipe %>
-                        <%= link_to "Edit", edit_user_recipe_recipe_food_path(@recipe.user, @recipe.id, recipe_food.id), class: "btn btn-primary" %>
-                        <%= button_to "Delete", user_recipe_recipe_food_path(@recipe.user, @recipe.id, recipe_food.id), method: :delete, class: "btn btn-danger" %>
-                    <% end %>
-                </li>
-            <% end %>
-        </ul>
-    <% end %>
-</div>
+    <table class="table table-striped table-bordered", style="text-align: center; width:100%">
+        <% if @recipe.recipe_foods.any? %>
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Food</th>
+                    <th>Quantity</th>
+                    <th>Value</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+                <tbody>
+                    <% @recipe.recipe_foods.each_with_index do |recipe_food, i|%>
+                        <tr>
+                            <td><%= i+1%></th>
+                            <td><%= recipe_food.food.name%></th>
+                            <td><%= recipe_food.quantity%> <%= recipe_food.food.measurement_unit  %></td>
+                            <td>$<%= recipe_food.quantity* recipe_food.food.price %></td>
+                            <td class="mb-3 col-sm-3">
+                                <% if can? :manage, @recipe %>
+                                    <div class="d-flex justify-content-center gap-2">
+                                        <%= link_to "Edit", edit_user_recipe_recipe_food_path(@recipe.user, @recipe.id, recipe_food.id), class: "btn btn-primary" %>
+                                        <%= button_to "Delete", user_recipe_recipe_food_path(@recipe.user, @recipe.id, recipe_food.id), method: :delete, class: "btn btn-danger" %>
+                                    </div>
+                                <% end %>
+                            </td>
+                        </tr>
+                    <%end%>
+                </tbody>
+        <% end %>
+    </table>
 </div>
