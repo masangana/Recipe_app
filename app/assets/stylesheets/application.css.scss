@@ -208,7 +208,7 @@
           .form-item{
             width: 100%;
             padding: 0 18px;
-            input,select{
+            input,select,textarea{
               width: 100%;
               padding: 8px 4px;
               margin-top: 8px;
@@ -217,6 +217,23 @@
               width:98%;
             }
             
+          }
+          .actions{
+            width: 100%;
+            input{
+              width: 100%;
+              padding: 8px 4px;
+              margin-top: 8px;
+              font-size: 16px;
+              border: 1px solid #333;
+              color: #333;
+              background-color: #fff;
+              &:hover{
+                background-color: #333;
+                color: #fff;
+                cursor: pointer;
+              }
+            }
           }
           
         }
@@ -239,6 +256,7 @@
           gap: 4px;
           align-items: flex-start;
           justify-content: space-between;
+          width: 55%;
           span.public{
             font-size: 10px;
             color: white;
@@ -263,6 +281,19 @@
         p{
           font-size: 16px;
           color: #666;
+        }
+        button{
+            font-size:12px;
+            color:#333;
+            padding: 4px 8px;
+            border: 1px solid #333;
+            border-radius: 2px;
+            &:hover{
+              background-color: #333;
+              color: #fff;
+             
+              cursor: pointer;
+            }
         }
       }
       .btn-add-recipe{
