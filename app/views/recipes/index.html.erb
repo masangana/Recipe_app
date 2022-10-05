@@ -1,6 +1,5 @@
-<div class="wrapper">
-
-  <h1>Recipe List</h1>
+<div class="page-wrapper">
+  <h1 class="page-heading">Recipe List</h1>
   <%= link_to "Add New Recipe", new_user_recipe_path, class: "btn btn-success" %>
   <% @recipes.each do |recipe| %>
     <%= render partial: 'recipes/cards/private', locals: { recipe: recipe, user_id: recipe.id } %>

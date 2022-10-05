@@ -3,11 +3,7 @@
         <div class="site-header__start">
           <a href="#" class="brand">Recipe App</a>
         </div>
-        <div class="site-header__middle">
           <nav class="nav">
-            <button class="nav__toggle" aria-expanded="false" type="button">
-              menu
-            </button>
             <ul class="nav__wrapper">
               <li class="nav__item"><%= link_to "Food", user_foods_path(current_user), {:class => "a-links"} %> </li>
               <li class="nav__item"><%= link_to "Recipes", user_recipes_path(current_user), {:class => "a-links"} %> </li>
@@ -15,9 +11,8 @@
               <li class="nav__item"><%= link_to "Shopping list", user_shoppings_path(current_user), {:class => "a-links"} %> </li>
             </ul>
           </nav>
-        </div>
         <div class="site-header__end">
           <%= button_to "Logout", destroy_user_session_path, { method: :delete, data: { turbo:false }}%>
         </div>
       </div>
-    </header>
+</header>
