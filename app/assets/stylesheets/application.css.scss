@@ -221,6 +221,66 @@
           
         }
       }
+      .recipe{
+        padding: 18px 5%;
+        background-color: #fff;
+        border: 1px solid #fff;
+        border-radius: 4px;
+        margin-bottom: 1rem;
+        width: 100%;
+        display: flex;
+        gap: 4%;
+        align-items: center;
+        justify-content: space-between;
+
+        .summary{
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+          align-items: flex-start;
+          justify-content: space-between;
+          span.public{
+            font-size: 10px;
+            color: white;
+            background-color: green;
+            padding:2px 6px;
+            border-radius: 15px;
+          }
+          span.private{
+            font-size: 10px;
+            color: white;
+            background-color: gray;
+            padding:2px 6px;
+            border-radius: 15px;
+          }
+          a{
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+            margin-bottom: 8px;
+          }
+        }
+        p{
+          font-size: 16px;
+          color: #666;
+        }
+      }
+      .btn-add-recipe{
+        margin-left: auto;
+        font-size: 16px;
+          font-weight: 400;
+          font-family: 'Poppins', sans-serif;
+          padding: 16px;
+          border-radius: 4px;
+          text-decoration: none;
+          background-color: #333;
+          border: 1px solid #333;
+          color: #f4f4f4;
+          &:hover {
+            color: #fff;
+          }
+          margin-bottom: 16px;
+      }
     }
     .divider{
       margin: 8px 0;
