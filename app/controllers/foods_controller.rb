@@ -15,7 +15,7 @@ class FoodsController < ApplicationController
   end
 
   def index
-    @foods = Food.all
+    @foods = Food.includes([:user]).where(user_id: current_user.id).order(:name)
   end
 
   def destroy
