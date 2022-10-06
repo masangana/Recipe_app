@@ -7,18 +7,16 @@ Rails.application.routes.draw do
   end
   # Define recipes default route
   get "recipes", to: "recipes#public"
+  get 'shoppings/index'
 
   # Define routes for recipes
   resources :users do
     resources :foods, only: [:index, :new, :create, :destroy]
     resources :recipes do
-      # #resources :recipe_foods
-      # get "/foods/:id/remove" => "recipes#remove_food", as: :remove_food
-      # get "/foods/add" => "recipes#add_food_view", as: :add_food_view
-      # post "/foods/add" => "recipes#add_food", as: :add_food
       resources :recipe_foods, only: [:new, :create, :destroy, :update, :edit]
+      resources :shoppings, only:[:index, :show]
     end
-    resources :shoppings, only:[:index]
+    
   end
 
   # Defines the root path route ("/")

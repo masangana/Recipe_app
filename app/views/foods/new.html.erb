@@ -8,7 +8,7 @@
                 <%= msg %>
             <% end %>
         <% end %>
-        <%= form_with model: @food, url: new_user_food_path do |f| %>
+        <%= form_with model: @food, url: user_foods_path, method: :post do |f| %>
         <%= f.label :name %>
         <%= f.text_field :name %>
         <%= f.label :measurement_unit %>
