@@ -23,7 +23,7 @@
 
     header {
       padding: 8px 3%;
-      
+
       .site-header__wrapper {
         display: flex;
         align-items: center;
@@ -59,11 +59,11 @@
             }
           }
         }
-        .site-header__end {
 
+        .site-header__end {
           button {
             font-size: 16px;
-            color:#333;
+            color: #333;
             padding: 8px 14px;
             border: 1px solid #333;
             border-radius: 2px;
@@ -91,6 +91,31 @@
         color: #333;
         margin-bottom: 1.5rem;
         font-family: 'Poppins', sans-serif;
+      }
+
+      .action-btns {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        width: 100%;
+        margin: 1.5rem 0;
+
+        a {
+          font-size: 16px;
+          font-weight: 400;
+          font-family: 'Poppins', sans-serif;
+          padding: 16px;
+          border-radius: 4px;
+          text-decoration: none;
+          background-color: #333;
+          border: 1px solid #333;
+          color: #f4f4f4;
+
+          &:hover {
+            color: #fff;
+          }
+        }
       }
 
       .public-recipe {
@@ -161,31 +186,6 @@
         }
       }
 
-      .action-btns {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 18px;
-        width: 100%;
-        margin: 1.5rem 0;
-
-        a {
-          font-size: 16px;
-          font-weight: 400;
-          font-family: 'Poppins', sans-serif;
-          padding: 16px;
-          border-radius: 4px;
-          text-decoration: none;
-          background-color: #333;
-          border: 1px solid #333;
-          color: #f4f4f4;
-
-          &:hover {
-            color: #fff;
-          }
-        }
-      }
-
       hr {
         margin: 8px 0;
         height: 2px;
@@ -215,6 +215,7 @@
           .form-item {
             width: 100%;
             padding: 0 18px;
+
             input,
             select,
             textarea {
