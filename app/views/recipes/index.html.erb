@@ -1,0 +1,11 @@
+<div class="page-wrapper">
+  <h1 class="page-heading">Recipe List</h1>
+  <%= link_to "Add New Recipe", new_user_recipe_path, class: "btn-add-recipe" %>
+  <% @recipes.each do |recipe| %>
+    <%= render partial: 'recipes/cards/private', locals: { recipe: recipe, user_id: recipe.id } %>
+  <% end %>
+  <% if @recipes.empty? %>
+    <h1>There are no public recipes to show</h1>
+  <% end %>
+
+</div>

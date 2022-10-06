@@ -1,0 +1,345 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+  font-family: 'Poppins', sans-serif;
+
+  body {
+    background-color: #f4f4f4;
+
+    header {
+      padding: 8px 3%;
+
+      .site-header__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .site-header__start {
+          a {
+            font-size: 32px;
+            color: #000;
+            text-decoration: none;
+          }
+        }
+
+        nav {
+          ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            gap: 18px;
+
+            li {
+              a {
+                text-decoration: none;
+                font-size: 18px;
+                font-family: 'Poppins', sans-serif;
+
+                &:hover {
+                  text-decoration: underline;
+                  opacity: 0.8;
+                }
+              }
+            }
+          }
+        }
+
+        .site-header__end {
+          button {
+            font-size: 16px;
+            color: #333;
+            padding: 8px 14px;
+            border: 1px solid #333;
+            border-radius: 2px;
+
+            &:hover {
+              background-color: #333;
+              color: #fff;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+
+    .page-wrapper {
+      padding: 2% 8%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .page-heading {
+        font-size: 28px;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 1.5rem;
+        font-family: 'Poppins', sans-serif;
+      }
+
+      .action-btns {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        width: 100%;
+        margin: 1.5rem 0;
+
+        a {
+          font-size: 16px;
+          font-weight: 400;
+          font-family: 'Poppins', sans-serif;
+          padding: 16px;
+          border-radius: 4px;
+          text-decoration: none;
+          background-color: #333;
+          border: 1px solid #333;
+          color: #f4f4f4;
+
+          &:hover {
+            color: #fff;
+          }
+        }
+      }
+
+      .public-recipe {
+        padding: 18px 5%;
+        background-color: #fff;
+        border: 1px solid #fff;
+        border-radius: 4px;
+        margin-bottom: 1rem;
+        width: 100%;
+        display: flex;
+        gap: 4%;
+        align-items: center;
+        justify-content: space-between;
+        text-align: left;
+
+        .info {
+          font-family: 'Poppins', sans-serif;
+          width: 45%;
+
+          a {
+            text-decoration: none;
+            color: #333;
+            font-size: 24px;
+          }
+
+          a:hover {
+            color: #002e93;
+          }
+
+          h3 {
+            font-size: 18px;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+          }
+
+          p {
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: 0.8rem;
+          }
+        }
+      }
+
+      .stats {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        width: 100%;
+
+        .recipe-summary {
+          width: 45%;
+
+          h4 {
+            font-size: 18px;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+
+            span {
+              font-size: 16px;
+              font-weight: 400;
+              font-family: 'Poppins', sans-serif;
+              color: #333;
+            }
+          }
+        }
+      }
+
+      hr {
+        margin: 8px 0;
+        height: 2px;
+      }
+
+      .form-wrapper {
+        background-color: #fff;
+        border: 1px solid #fff;
+        border-radius: 4px;
+        margin-bottom: 1rem;
+        padding: 16px;
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        form {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 16px;
+          width: 100%;
+          margin: 1.5rem 0;
+
+          .form-item {
+            width: 100%;
+            padding: 0 18px;
+
+            input,
+            select,
+            textarea {
+              width: 100%;
+              padding: 8px 4px;
+              margin-top: 8px;
+            }
+
+            input[type="number"] {
+              width: 98%;
+            }
+          }
+
+          .actions {
+            width: 100%;
+
+            input {
+              width: 100%;
+              padding: 8px 4px;
+              margin-top: 8px;
+              font-size: 16px;
+              border: 1px solid #333;
+              color: #333;
+              background-color: #fff;
+
+              &:hover {
+                background-color: #333;
+                color: #fff;
+                cursor: pointer;
+              }
+            }
+          }
+        }
+      }
+
+      .recipe {
+        padding: 18px 5%;
+        background-color: #fff;
+        border: 1px solid #fff;
+        border-radius: 4px;
+        margin-bottom: 1rem;
+        width: 100%;
+        display: flex;
+        gap: 4%;
+        align-items: center;
+        justify-content: space-between;
+
+        .summary {
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+          align-items: flex-start;
+          justify-content: space-between;
+          width: 55%;
+
+          span.public {
+            font-size: 10px;
+            color: white;
+            background-color: green;
+            padding: 2px 6px;
+            border-radius: 15px;
+          }
+
+          span.private {
+            font-size: 10px;
+            color: white;
+            background-color: gray;
+            padding: 2px 6px;
+            border-radius: 15px;
+          }
+
+          a {
+            text-decoration: none;
+            color: #333;
+            font-size: 18px;
+            margin-bottom: 8px;
+          }
+        }
+
+        p {
+          font-size: 16px;
+          color: #666;
+        }
+
+        button {
+          font-size: 12px;
+          color: #333;
+          padding: 4px 8px;
+          border: 1px solid #333;
+          border-radius: 2px;
+
+          &:hover {
+            background-color: #333;
+            color: #fff;
+            cursor: pointer;
+          }
+        }
+      }
+
+      .btn-add-recipe {
+        margin-left: auto;
+        font-size: 16px;
+        font-weight: 400;
+        font-family: 'Poppins', sans-serif;
+        padding: 16px;
+        border-radius: 4px;
+        text-decoration: none;
+        background-color: #333;
+        border: 1px solid #333;
+        color: #f4f4f4;
+
+        &:hover {
+          color: #fff;
+        }
+
+        margin-bottom: 16px;
+      }
+    }
+
+    .divider {
+      margin: 8px 0;
+      height: 2px;
+      background-color: #f4f4f4;
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+
+<div class="recipe">
+    <div class="summary">
+        <div>
+            <% if recipe.public %>
+                <span class="public">Public</span>
+            <% else %>
+                <span class="private">Private</span>
+            <% end %>
+        </div> 
+        <%= link_to recipe.name, user_recipe_path(id: recipe.id, user_id: recipe.user.id) %>
+        <%# <h3>By <%= recipe.user.name%> </h3>
+        <% if can? :delete, recipe %>
+            <%= button_to "Delete", user_recipe_path(recipe.user, recipe.id), method: :delete, class: "btn btn-danger" %>
+        <% end %>
+    </div>
+    <p><%= recipe.description%> </p>
+    
+</div>
