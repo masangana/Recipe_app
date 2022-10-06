@@ -5,14 +5,22 @@
         </div>
           <nav class="nav">
             <ul class="nav__wrapper">
-              <li class="nav__item"><%= link_to "Food", user_foods_path(current_user), {:class => "a-links"} %> </li>
-              <li class="nav__item"><%= link_to "Recipes", user_recipes_path(current_user), {:class => "a-links"} %> </li>
-              <li class="nav__item"><%= link_to "Public recipes", user_recipes_path(current_user), {:class => "a-links"} %> </li>
-              <li class="nav__item"><%= link_to "Shopping list", user_shoppings_path(current_user), {:class => "a-links"} %> </li>
+              <% if user_signed_in? %>
+                <li class="nav__item"><%= link_to "My Food", user_foods_path(current_user), {:class => "a-links"} %> </li>
+                <li class="nav__item"><%= link_to "My Recipes", user_recipes_path(current_user), {:class => "a-links"} %> </li>           
+                <li class="nav__item"><%= link_to "Shopping List", user_shoppings_path(current_user), {:class => "a-links"} %> </li>
+              <% end %>
+              <li class="nav__item"><%= link_to "Public Recipes", recipes_path(current_user), {:class => "a-links"} %> </li>
+              <% if !user_signed_in? %>
+                <li class="nav__item"><%= link_to "Login", new_user_session_path, {:class => "a-links"} %> </li>
+                <li class="nav__item"><%= link_to "Register",  new_user_registration_path, {:class => "a-links"} %> </li>
+              <% end %>
             </ul>
           </nav>
         <div class="site-header__end">
-          <%= button_to "Logout", destroy_user_session_path, { method: :delete, data: { turbo:false }}%>
+          <% if user_signed_in? %>
+            <%= button_to "Logout", destroy_user_session_path, { method: :delete, data: { turbo:false }}%>
+          <% end %>
         </div>
       </div>
 </header>
