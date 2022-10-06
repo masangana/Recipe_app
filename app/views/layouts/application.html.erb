@@ -13,9 +13,7 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <% if user_signed_in? %>
-      <%= render '/menu' %>
-    <% end %>
+    <%= render '/menu' %>
     <%= yield %>
   </body>
 </html>

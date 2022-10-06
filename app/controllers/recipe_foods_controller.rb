@@ -1,6 +1,5 @@
 class RecipeFoodsController < ApplicationController
-  def new
-  end
+  def new; end
 
   def create
     @recipe = Recipe.find(params[:recipe_id])
@@ -13,12 +12,9 @@ class RecipeFoodsController < ApplicationController
     end
   end
 
-  def index
-  end
+  def index; end
 
-  def show
-
-  end
+  def show; end
 
   def destroy
     @recipe = Recipe.find(params[:recipe_id])

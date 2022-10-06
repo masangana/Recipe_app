@@ -69,15 +69,17 @@ $ rspec ./spec/#{filename}_spec.rb
 
 ## Authors
 
+👤 **Isaac Pitwa** <img src="https://emojis.slackmojis.com/emojis/images/1531849430/4246/blob-sunglasses.gif?1531849430" width="20"/>
+
+- GitHub: [![GitHub Badge](https://img.shields.io/badge/-Isaac-white?logo=GitHub&logoColor=181717&style=plastic)](https://github.com/isaacpitwa)
+- Twitter: [![Twitter Badge](https://img.shields.io/badge/-Isacc-white?logo=Twitter&logoColor=1DA1F2&style=plastic)](https://twitter.com/isaacpitwa)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/isaac-pitwa)
+
 👤 **Alex Masangana**
 
   - GitHub: [![GitHub Badge](https://img.shields.io/badge/-Alexander-white?logo=GitHub&logoColor=181717&style=plastic)](https://github.com/masangana)
   - Twitter: [![Twitter Badge](https://img.shields.io/badge/-Alexander-white?logo=Twitter&logoColor=1DA1F2&style=plastic)](https://twitter.com/alexmasangana)
   - Gmail: [![Gmail Badge](https://img.shields.io/badge/-@Alexander-white?logo=Gmail&logoColor=EA4335&style=plastic)](mailto:alexmasangana@gmail.com)
-
-
-👤 **Isaac Pitwa** <img src="https://emojis.slackmojis.com/emojis/images/1531849430/4246/blob-sunglasses.gif?1531849430" width="20"/>
-- GitHub: [![GitHub Badge](https://img.shields.io/badge/-isaac-white?logo=GitHub&logoColor=181717&style=plastic)](https://github.com/isaacpitwa)
 
 
 
