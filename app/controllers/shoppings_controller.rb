@@ -16,4 +16,14 @@ class ShoppingsController < ApplicationController
       sum + (shopping_item.food.price * shopping_item.required_quantity)
     end
   end
+
+  def show
+    @recipe = Recipe.find(params[:recipe_id])
+    @recipe_food = @recipe.recipe_foods.all.includes([:food]).sort_by { |recipe_food| recipe_food.food.name }
+    @food = Food.includes([:food])
+    @total_price = 0
+    @recipe_food.each do |fd|
+      @total_price += fd.quantity * fd.food.price
+    end
+  end
 end
