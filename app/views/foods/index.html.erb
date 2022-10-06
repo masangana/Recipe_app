@@ -21,7 +21,6 @@
             <td>$ <%= food.price %></td>
             <td>
               <div>
-                <%= button_to "DeleteLex", user_food_path(food.user, food.id), method: :delete, class: "btn btn-danger" %>
                 <%=button_to "Delete", {:controller => :foods, :action => 'destroy', :id => food.id}, :method => :delete, class: 'delete-button' %>
              </div>
             </td>
